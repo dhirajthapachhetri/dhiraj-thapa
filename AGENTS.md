@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- All site copy, career data and links live in `src/content/` (site.ts, projects.ts, media.ts); pages only render them — edit content there, not in route files.
+- Photo slots use `MediaFrame`, which shows a labelled placeholder until a slot's `src` is set — keeps unconfirmed imagery honest.
+- The PDF CV is generated from `scripts/cv/cv.html` via `python3 scripts/cv/build_cv.py` into `public/cv/`; regenerate after career changes so it stays in sync with the site.
+- The contact form opens the visitor's email app (mailto) and stores nothing server-side.
