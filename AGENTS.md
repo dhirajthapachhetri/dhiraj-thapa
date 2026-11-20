@@ -34,3 +34,4 @@ use the editor.
 - Photo slots use `MediaFrame`, which shows a labelled placeholder until a slot's `src` is set — keeps unconfirmed imagery honest.
 - The PDF CV is generated from `scripts/cv/cv.html` via `python3 scripts/cv/build_cv.py` into `public/cv/`; regenerate after career changes so it stays in sync with the site.
 - The contact form opens the visitor's email app (mailto) and stores nothing server-side.
+- The site is also deployed as a static export to GitHub Pages: every route is prerendered (vite.config.ts `pages` + `prerender`) to `.output/public`. Add each new route to `pages`, use no server functions or per-visitor data, and serve images from `public/` (not lovable-assets pointers, whose URLs only resolve on Lovable hosting).

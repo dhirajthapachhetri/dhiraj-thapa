@@ -1,8 +1,7 @@
-import cinenestLogo from "@/assets/cinenest-logo.png.asset.json";
-
 /**
- * Every photo slot on the site. Set `src` to an image URL (or an imported asset's
- * `.url`) to replace a placeholder — the layout stays the same.
+ * Every photo slot on the site. Set `src` to an image path to replace a placeholder —
+ * the layout stays the same. Put photos in public/images/ (e.g. "/images/portrait.jpg")
+ * so they ship with the static build on any host.
  * Only use authentic photographs of Dhiraj; never stock or generated portraits.
  */
 export type MediaSlot = {
@@ -31,7 +30,8 @@ export const media = {
 } satisfies Record<string, MediaSlot>;
 
 export const cinenestAssets = {
-  logo: cinenestLogo.url,
+  /** Served from public/ so it also works on static hosts such as GitHub Pages. */
+  logo: "/images/cinenest-logo.png",
   /** YouTube/Vimeo embed URL or an .mp4 file URL. Leave null to show the placeholder. */
   showreel: null as string | null,
 };

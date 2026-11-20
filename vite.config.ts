@@ -14,5 +14,25 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // Static export for GitHub Pages: every page is rendered to <route>/index.html at build
+    // time. All pages are identical for every visitor (no auth, cookies or per-user data).
+    // `pages` lists every route explicitly; crawlLinks also follows links from them.
+    // Inside Lovable's own build, crawlLinks is pinned to false (the explicit list still covers
+    // every page), so the Lovable preview and publish keep working.
+    pages: [
+      { path: "/" },
+      { path: "/about" },
+      { path: "/journey" },
+      { path: "/work" },
+      { path: "/cinenest" },
+      { path: "/contact" },
+    ],
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+      // Crawling also finds links to static files (e.g. the CV PDF in public/). Those are copied
+      // as-is, not rendered, so only prerender paths without a file extension.
+      filter: ({ path }: { path: string }) => !/\.[a-z0-9]+$/i.test(path),
+    },
   },
 });
