@@ -119,8 +119,8 @@ export function ContactCTA() {
                 <Link to="/contact">Let's Connect →</Link>
               </Button>
               <Button asChild variant="line" size="xl">
-                <a href={profile.cvUrl} download>
-                  Download CV
+                <a href={links.instagram} target="_blank" rel="noopener noreferrer">
+                  Instagram ↗
                 </a>
               </Button>
             </div>

@@ -35,6 +35,11 @@ export function SiteFooter() {
                   </a>
                 </li>
                 <li>
+                  <a href={links.instagram} target="_blank" rel="noopener noreferrer" className="link-draw">
+                    Instagram ↗
+                  </a>
+                </li>
+                <li>
                   <a href={links.email} className="link-draw">
                     Email
                   </a>
@@ -42,11 +47,6 @@ export function SiteFooter() {
                 <li>
                   <a href={links.cinenest} target="_blank" rel="noopener noreferrer" className="link-draw">
                     CineNest Media ↗
-                  </a>
-                </li>
-                <li>
-                  <a href={profile.cvUrl} download className="link-draw">
-                    Download CV
                   </a>
                 </li>
               </ul>

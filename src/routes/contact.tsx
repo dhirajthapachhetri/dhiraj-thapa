@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/site/ContactForm";
 import { contact, links, profile } from "@/content/site";
 import { pageMeta } from "@/lib/seo";
@@ -19,6 +18,7 @@ const details = [
   { label: "Phone", value: profile.phone, href: profile.phoneHref },
   { label: "Location", value: profile.location },
   { label: "LinkedIn", value: "in/dhirajthapachhetri", href: links.linkedin, external: true },
+  { label: "Instagram", value: "@dhirajthapachettri", href: links.instagram, external: true },
   { label: "CineNest Media", value: "cinenestmedia.com", href: links.cinenest, external: true },
 ];
 
@@ -64,17 +64,6 @@ function ContactPage() {
               </div>
             ))}
           </dl>
-          <div className="mt-10 border border-border bg-paper-deep p-6">
-            <p className="eyebrow text-muted-foreground">Curriculum vitae</p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              A clean, printable PDF version of my experience, for applications and introductions.
-            </p>
-            <Button asChild variant="line" size="xl" className="mt-5">
-              <a href={profile.cvUrl} download>
-                Download CV (PDF)
-              </a>
-            </Button>
-          </div>
         </div>
         <div className="md:col-span-6 md:col-start-7">
           <h2 className="eyebrow mb-8 text-muted-foreground">Write to me</h2>

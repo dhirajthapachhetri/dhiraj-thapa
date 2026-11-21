@@ -21,11 +21,11 @@ export const profile = {
   phoneHref: "tel:+9779849668301",
   languages: ["Nepali", "English", "Hindi"],
   tagline: "Creative mind. Entrepreneurial spirit. Always building.",
-  cvUrl: "/cv/dhiraj-thapa-chhetri-cv.pdf",
 } as const;
 
 export const links = {
   linkedin: "https://www.linkedin.com/in/dhirajthapachhetri/",
+  instagram: "https://www.instagram.com/dhirajthapachettri/",
   cinenest: "https://cinenestmedia.com",
   email: `mailto:${profile.email}`,
 } as const;
